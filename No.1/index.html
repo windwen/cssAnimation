@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out{
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .out .top{
+            font-size: 35px;
+            margin-bottom: 20px;
+            transition: color 0.5s;
+        }
+        .out .line{
+            background: deepskyblue;
+            width: 0px;
+            height: 5px;
+            margin: 0 auto;
+            transition: width 0.5s;
+
+        }
+        .out .bottom{
+            font-size: 35px;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+            width: 150px;
+            margin-top: 100px;
+            border-radius: 10px;
+            cursor: default;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById('btn');
+            var line = document.getElementById('line');
+            var top = document.getElementById('top');
+            var flag = true;
+            btn.onclick = function(){
+                if(flag){
+                    flag = false;
+                    line.style.width = '150px';
+                    top.style.color = 'deepskyblue';
+                    btn.style.backgroundColor = 'deepskyblue';
+                }else{
+                    flag = true;
+                    line.style.width = '0';
+                    top.style.color = 'black';
+                    btn.style.backgroundColor = 'deepskyblue';
+                }
+                setTimeout( function(){
+                    btn.style.backgroundColor = 'white';
+                },10);
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="out">
+    <p id="top" class="top">前端学院</p>
+    <p id="line" class="line"></p>
+    <p id="btn" class="bottom">切换样式</p>
+</div>
+</body>
+</html>
